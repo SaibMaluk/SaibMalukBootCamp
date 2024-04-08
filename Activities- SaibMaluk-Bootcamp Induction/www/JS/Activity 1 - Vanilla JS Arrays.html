@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Activity 1 - Vanilla JS Arrays</h2>
+
+<p id="saib"></p>
+
+<script>
+const arraySum = [];
+    
+arraySum[0] = 1;
+arraySum[1] = 2;
+arraySum[2] = 3;
+arraySum[3] = 4;
+arraySum[4] = 5;
+arraySum[5] = 6;
+arraySum[6] = 7;
+arraySum[7] = 8;
+arraySum[8] = 9;
+arraySum[9] = 10;
+
+let aLength = arraySum.length; 
+let theSum = 0;
+for (let i = 0; i < aLength ; i++) {
+  theSum += arraySum[i] ;
+}
+
+
+ 
+
+document.getElementById("saib").innerHTML = theSum;
+
+</script>
+
+</body>
+</html>

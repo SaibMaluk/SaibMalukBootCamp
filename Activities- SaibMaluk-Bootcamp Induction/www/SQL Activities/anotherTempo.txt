@@ -1,0 +1,82 @@
+Exercise01: Run similar query to determine the employees (first name, last name, salary, department id) that earn less than the average salary of the IT department.
+
+Algorithm to work out the answer
+
+STEP 1. what is the department id for the IT department
+
+STEP 2. work out the average salary from the department, corresponding to the IT department.
+
+5760 – FROM simply from a postage stamp calculation
+
+STEP 3. Write the main query - and use the average salary amount to get a view of the output (THE ANSWER)
+
+select first_name, last_name, salary
+
+from employees
+
+where salary < 5760;
+
+STEP 4: Rewrite the query this time with the main + subquery - to generate same answer as STEP 3
+
+ 
+
+Algorithm to work out the answer
+
+Exercise02: Determine all of the employees earning more than the minimum salary earnt in the sales department
+
+ 
+
+STEP 1. What is the department id for the sales department
+
+STEP 2. work out the minimum salary from the department, corresponding to the sales department.
+
+STEP 3. Write the main query - and use the min salary from sales department amount to get a view of the output (THE ANSWER)
+
+select min(salary)
+
+from employees
+
+where department_id = 8;
+
+ 
+
+ 
+
+ 
+
+STEP 4: Rewrite the query this time with the main + subquery - to generate same answer as STEP 3
+
+ 
+
+select first_name, last_name, salary
+
+from employees
+
+where salary > all (select min(salary) from employees where department_id = 8)
+
+order by salary;
+
+ 
+
+ 
+
+             
+Construct an sql that will find <> which means no matches
+ 
+SELECT 
+    first_name, last_name, salary, department_id
+FROM
+    employees
+WHERE
+    salary <> ALL (SELECT 
+            AVG(salary)
+        FROM
+            employees
+        GROUP BY department_id)
+ORDER BY salary DESC; 
+ 
+
+No where statement here – so what is it comparing?
+
+Not returning a single value – its return a series of values that correspond to the Averages from each of the departments.
+

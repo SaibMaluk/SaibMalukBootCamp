@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Activity 2 - Control Statements</h2>
+
+<button onclick="compareIncDec()">Enter three numbers to compare</button>
+
+<p id="saib"></p>
+
+<script>
+function compareIncDec() {
+  let number1 = prompt("Please enter the first number:");
+  let number2 = prompt("Please enter the second number:");
+  let number3 = prompt("Please enter the third number:");
+  let result;
+   {
+   
+if (number1<=number2 && number2<=number3) {
+  //  console.log("All numbers are equal");
+	result = "Increasing order";
+}
+// check if number is 0
+else if (number1>=number2 && number2>=number3) {
+ // console.log("Neither all are equal or different");
+  result = "Decreasing order";
+}
+// if number is neither greater than 0, nor zero
+else {
+  //  console.log("All numbers are different");
+	result = "Neither increasing or decreasing order";
+}
+
+    <!-- Write your comments here -->
+  }
+  document.getElementById("saib").innerHTML = result;
+}
+
+ 
+
+
+</script>
+
+</body>
+</html>

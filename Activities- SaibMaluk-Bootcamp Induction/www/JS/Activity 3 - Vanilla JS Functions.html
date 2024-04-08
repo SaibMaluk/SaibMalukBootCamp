@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Activity 3 - Vanilla JS Functions</h2>
+
+<p id="saib"></p>
+<p id="saib1"></p>
+
+<script>
+let number;
+let isPrime = true;
+function checkPrime(number){
+  let answer = 1;
+  if (number == 0 || number == 1){
+    return 1;
+  }
+if (number > 1) {
+
+    
+    for (let i = 2; i < number; i++) {
+        if (number % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+	}
+	if (isPrime) {
+	document.getElementById("saib").innerHTML = number + " is a prime number";
+	}
+	else {
+	document.getElementById("saib1").innerHTML = number + " is NOT a prime number";
+	}
+	
+	}
+	checkPrime(37);
+	
+</script>
+
+</body>
+</html>
+

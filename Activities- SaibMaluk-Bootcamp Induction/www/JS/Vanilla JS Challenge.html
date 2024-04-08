@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+    
+       
+       
+   
+    <body>
+	 <h2>Vanilla JS Challenge</h2>
+	 <p id="saib"></p>
+		 <p id="saib1"></p>
+	
+	<p id="saib2"></p>
+		<script>
+		
+            
+var playerChoice = prompt("Please choose paper, rock, or scissors");
+var programChoice = Math.random();
+if (programChoice < 0.34) {
+    programChoice = "rock";
+} else if(programChoice <= 0.67) {
+    programChoice = "paper";
+} else {
+    programChoice = "scissors";
+}
+let winning = function(choice1, choice2) {
+    if(choice1 === choice2) {
+    return "The result is a tie!";
+}
+if(choice1 === "scissors") {
+    if(choice2 === "rock") {
+        return "rock wins";
+    } else {
+        if(choice2 === "paper") {
+            return "scissors wins";
+        }
+    }
+
+}
+if(choice1 === "paper") {
+    if(choice2 === "rock") {
+        return "paper wins";
+    } else {
+        if(choice2 === "scissors") {
+            return "scissors wins";
+    }
+}
+}
+if(choice1 === "rock") {
+    if(choice2 === "scissors") {
+        return "rock wins";
+    } else {
+        return "paper wins";
+    }
+}
+
+};
+
+document.getElementById("saib").innerHTML = "Player Choice: " + playerChoice;
+
+document.getElementById("saib1").innerHTML = "Program Choice: " + programChoice;
+
+
+
+
+
+let y = winning(playerChoice, programChoice);
+
+document.getElementById("saib2").innerHTML = "Result: " + y;
+
+
+        </script>
+    </body>
+</html>

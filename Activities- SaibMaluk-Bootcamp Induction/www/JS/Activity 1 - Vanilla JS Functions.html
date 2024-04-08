@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Activity 1 - Vanilla JS Functions</h2>
+
+<p id="saib"></p>
+<p id="saib1"></p>
+<script>
+let n;
+let newArray = new Array(n)
+function showArray(newArray) {
+    
+	document.getElementById("saib").innerHTML = " The content of the array is: [ " + newArray + " ] ";
+	
+	
+
+}
+
+
+
+let n1;
+let newArray1 = new Array(n1)
+function showArray1(newArray1) {
+    
+	//sorting the array 
+	newArray1.sort(function(a, b){return a - b});
+	
+	let aMax= newArray1.length - 1;
+	document.getElementById("saib1").innerHTML = "The max value in the array is: " + newArray1[aMax];
+	
+}
+let sampleArray = [10, 2, 3, 4, 7];
+
+showArray(sampleArray);
+
+showArray1(sampleArray);
+</script>
+
+</body>
+</html>
+

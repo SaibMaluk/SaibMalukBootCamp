@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Activity 2 - Vanilla JS Arrays</h2>
+
+<p id="saib"></p>
+
+<script>
+const arrayAverage = [];
+
+
+arrayAverage[0] = 20;
+arrayAverage[1] = 30;
+arrayAverage[2] = 25;
+arrayAverage[3] = 35; 
+arrayAverage[4] = -16;
+arrayAverage[5] = 60;
+arrayAverage[6] = -100;
+
+
+/*  fruits.sort()   // Sorts the array */
+let aLength = arrayAverage.length; 
+
+let theSum = 0 ;
+for (let i = 0; i < aLength ; i++) {
+  theSum += arrayAverage[i] ;
+  
+}
+//document.getElementById("saib").innerHTML = theSum;
+
+const theAverage = theSum / aLength;
+
+
+document.getElementById("saib").innerHTML = theAverage;
+
+</script>
+
+</body>
+</html>

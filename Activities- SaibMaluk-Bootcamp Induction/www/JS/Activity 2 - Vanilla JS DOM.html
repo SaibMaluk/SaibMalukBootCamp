@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    
+       
+       
+   
+    <body>
+	 <h2>Activity 2 - Vanilla JS DOM</h2>
+	 <p id="saib"></p>
+	<button onclick="volumeOfSphere()">Calculate Sphere</button>
+	
+	
+		<script>
+		//let radius = prompt("Please enter the radius:");
+            function volumeOfSphere(radius){
+			radius = prompt("Please enter the radius:");
+  let volume=4/3*3.14*radius*radius*radius;
+
+  document.getElementById("saib").innerHTML = "Sphere is: " + volume;
+}
+
+
+        </script>
+    </body>
+</html>

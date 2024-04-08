@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Activity 3 - Vanilla JS Arrays</h2>
+
+<p id="saib"></p>
+<p id="saib1"></p>
+<p id="saib2"></p>
+<script>
+const arraySort = [25, 14, 56, 15, 36, 56, 77, 18, 29, 49];
+
+document.getElementById("saib").innerHTML = " Original Array: [ " + arraySort + " ] ";
+/*
+arrayAverage[0] = 20;
+arrayAverage[1] = 30;
+arrayAverage[2] = 25;
+arrayAverage[3] = 35; 
+arrayAverage[4] = -16;
+arrayAverage[5] = 60;
+arrayAverage[6] = -100;
+
+
+  arraySort.sort()   // Sorts the array */
+  arraySort.sort();
+
+let aLength = arraySort.length; 
+
+let aMax= arraySort[aLength - 1];
+
+  let aMin= arraySort[0];
+  document.getElementById("saib1").innerHTML = "Minimum value for the above array = " + aMin;
+document.getElementById("saib2").innerHTML = "Maximum value for the above array = " + aMax;
+
+
+//document.getElementById("saib").innerHTML = theSum;
+
+
+ //document.getElementById("saib").innerHTML = arraySort;
+
+//document.getElementById("saib").innerHTML = aLength;
+
+
+</script>
+
+</body>
+</html>

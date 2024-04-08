@@ -1,0 +1,258 @@
+SELECT
+first_name
+FROM
+employees
+WHERE
+YEAR(hire_date) = 2000;
+
+///////////////
+SELECT 
+    first_name, last_name
+FROM
+    employees;
+ 
+DELETE FROM employees 
+WHERE
+    hire_date < '1990-01-01';
+///////////////////
+
+
+SELECT
+FirstName
+FROM
+tbldoctors
+WHERE
+County = `Oxfordshire`;
+
+
+
+
+
+SELECT *
+FROM `tblreceptionist`
+WHERE
+FirstName = "Mary";
+
+SELECT department_name, department_id
+FROM departments
+Where
+department_id >= 5 AND department_id <= 9
+
+ ; 
+
+////////////////////
+
+SELECT
+               first_name,
+               last_name,
+			   salary,
+			   email,
+               hire_date
+FROM
+               employees 
+WHERE
+               YEAR (hire_date) >=1998
+AND YEAR (hire_date) <= 2000
+ORDER BY  last_name  ;
+-----------------------------
+
+SELECT
+               department_id,
+               count(employee_id) headcount
+FROM
+               employees
+GROUP BY
+               department_id
+HAVING
+               headcount >= 5;
+
+-------------------------------
+
+SELECT 
+    first_name, last_name, salary
+FROM
+    employees
+WHERE
+    salary BETWEEN 9000 AND 12000
+ORDER BY salary;
+
+
+
+---------------------------
+
+SELECT 
+    e.first_name || ' ' || e.last_name AS employee,
+    m.first_name || ' ' || m.last_name AS manager,
+	e.manager_id  AS manager,
+	
+	d.department_id AS department,
+	d.location_id   AS location
+FROM
+    employees e
+        INNER JOIN
+    employees m ON m.employee_id = e.manager_id
+	INNER JOIN departments d ON e.department_id = d.department_id
+	
+ORDER BY manager;
+////////////////////////
+
+select 		jobs.job_id, 
+		first_name, 
+		last_name, 
+		job_title, 
+		email
+
+from employees 
+		inner join jobs on
+
+employees.job_id = jobs.job_id;
+
+----------------
+
+SELECT
+               r.region_name,
+               c.country_name,
+               l.street_address,
+               l.city
+FROM
+               regions r
+LEFT JOIN countries c 
+ON 
+c.region_id = r.region_id
+LEFT JOIN 
+locations l 
+ON l.country_id = c.country_id
+WHERE
+               c.country_id IN ('US', 'UK', 'CN');
+
+-----------------------------
+
+SELECT 
+	e.department_id AS "Department ID",
+	department_name AS "Department",
+    COUNT(*) AS "Number of Employees"
+FROM
+    employees e
+	INNER JOIN departments d 
+	ON d.department_id= e.department_id
+WHERE
+    e.department_id = 8;
+
+
+Activity 1 -Aggregate Functions -Exercise01
+------------------------------
+
+
+SELECT
+              e.employee_id,
+               
+               COUNT(*)
+FROM
+               employees e
+INNER JOIN dependents d ON d.employee_id = e.employee_id
+GROUP BY
+                e.employee_id
+HAVING
+      COUNT(*) >= 1
+ORDER BY
+               COUNT(*) DESC;
+
+---------------------
+SELECT d.employee_id, COUNT(*) 
+FROM dependents d 
+LEFT JOIN employees e 
+ON e.employee_id = d.employee_id 
+GROUP BY d.employee_id 
+HAVING COUNT(*) = 2 
+ORDER BY COUNT(*) DESC;
+---------------------------
+
+
+
+Activity 1 - Grouping Data - Exercise01
+
+---------------------
+SELECT 
+job_id,
+COUNT(employee_id) headcount
+FROM
+employees
+GROUP BY
+job_id
+ORDER BY headcount DESC;
+
+//////////////////
+
+SELECT
+               e.department_id,
+               department_name,
+               COUNT(employee_id) headcount
+FROM
+               employees e
+INNER JOIN departments d ON d.department_id = e.department_id
+GROUP BY
+               e.department_id;
+
+-------------------
+SELECT j.job_title, 
+e.job_id, 
+COUNT(e.job_id) headcount 
+FROM employees e 
+LEFT JOIN jobs j ON j.job_id = e.job_id 
+GROUP BY e.job_id 
+ORDER BY headcount DESC;
+--------------------
+SELECT employee_id, first_name, last_name 
+
+FROM employees e 
+
+WHERE 
+EXISTS( SELECT * FROM departments d WHERE  department_name= "IT") 
+
+ORDER BY first_name , last_name;
+------------------
+
+ select employee_id, first_name, last_name
+
+from employees
+
+where department_id in (select department_id
+
+from departments
+
+where location_id = 1700);
+
+/////////////////////
+
+CREATE TABLE courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE trainings (
+    employee_id INT,
+    course_id INT,
+    taken_date DATE,
+    PRIMARY KEY (employee_id , course_id)
+);
+
+
+///////////////
+
+UPDATE student 
+SET 
+    firstname = ‘Barney’
+WHERE
+    studentno = 1234567;
+
+
+
+
+
+
+
+
+
+
+
